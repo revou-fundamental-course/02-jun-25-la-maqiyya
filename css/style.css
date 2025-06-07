@@ -39,17 +39,20 @@ body {
 
 /* Home Banner */
 .banner {
-  position: relative;
   text-align: center;
-  background: url('banner-image.jpg') no-repeat center center/cover;
-  padding: 50px;
+  padding: 30px 20px;
   color: white;
+  background-color: #1e1e2f;
 }
 
-.banner h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+.banner img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
+
 
 /*testing*/
 .container {
