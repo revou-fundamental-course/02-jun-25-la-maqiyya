@@ -1,65 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website - Aulya Farras</title>
-
-    <!-- CSS External -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aulya Farras El Maqy | Portfolio</title>
+  <link rel="stylesheet" href="css\style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="js\script.js" defer></script>
 </head>
-
 <body>
-    <!-- Header Content -->
-    <header class="main-header">
-        <!-- Logo Website -->
-        <div class="main-logo"></div>
 
-        <!-- Navbar -->
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#our-profile">Our Profile</a>
-            <a href="#message-us">Message Us</a>
-        </nav>
-    </header>
+<header>
+  <nav class="navbar">
+    <img src="logo.png" alt="Logo">
+    <h1><span class="typewriter">Aulya Farras El Maqy</span></h1>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#message">Message Us</a>
+    <button id="toggle-theme" title="Toggle dark mode">🌓</button>
+  </nav>
+</header>
 
-    <hr />
+<main class="container">
+  <section id="home">
+    <div class="banner">
+      <img src="banner-image.jpg" alt="Portfolio Banner">
+      <h2>Welcome, <span id="user-name">Guest</span>!</h2>
+      <p>Your journey into creativity and development starts here.</p>
+    </div>
+  </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Home Section -->
-        <section id="home">
-            <h1>Hi there, Welcome to my portfolio website!</h1>
-            <p>My name is Aulya Farras El Maqy, and I am a Student Frontend Developer.</p>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Farras. <br>
+      My journey into the digital world actually began with social media and creative content. 
+      For two years, I worked as a <mark>social media admin</mark> at my boarding school, while also leading a <mark>media team I built from scratch</mark>. 
+      From that experience, I learned a lot about teamwork, communication, and leadership.
+      I often create content ranging from photography and videography to editing using software like Photoshop, Premiere Pro, Illustrator, and Canva. 
+      I also regularly stream events using OBS. 
+      Additionally, I was honoured to serve as the <mark>first student council president</mark> at my boarding school, an experience that taught me responsibility and leadership. 
+      Now, I’m focusing seriously on learning front-end development HTML, CSS, and JavaScript. 
+      I created this website as a space to practise and document my learning journey, which I hope will continue to grow in the future. 
+      Thanks for stopping by and getting to know me better!</p>
+    <dd>*in English</dd><br>
+    <p>Halo! Aku Farras. <br>
+      Awal mula ketertarikanku di dunia digital sebenarnya dari media sosial dan konten kreatif. 
+      Selama dua tahun, aku jadi <mark>admin sosmed</mark> di pondok pesantren, sekaligus <mark>ketua tim media</mark> yang aku bentuk dari nol. 
+      Dari situ aku belajar banyak soal kerja tim, komunikasi, dan memimpin. 
+      Aku sering membuat konten mulai dari fotografi, videografi, editing pakai software seperti Photoshop, Premiere Pro, Illustrator, dan Canva. 
+      Aku juga biasa jadi streamer acara menggunakan OBS. 
+      Selain itu, aku pernah dipercaya jadi <mark>ketua OSIS angkatan pertama</mark> di pondok pesantren, pengalaman yang mengajarkanku soal tanggung jawab dan kepemimpinan. 
+      Sekarang, aku lagi serius belajar front-end development HTML, CSS, dan JavaScript. 
+      Website ini aku buat sebagai tempat latihan dan dokumentasi perjalanan belajarku, yang aku harap terus berkembang ke depannya. 
+      Terima kasih sudah mampir dan mengenalku lebih dekat!</p>
+    <dd>*in Indonesia</dd>
+  </section>
 
-            <!-- Banner Section -->
-            <div class="banner-img"></div>
-        </section>
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>🎞️ Editing Reel #1</h3>
+        <p>A short video clip I edited for a school event. This was my first time using Premiere Pro seriously.</p>
+      </div>
+      <div class="project-card">
+        <h3>📸 Mini Photo Series</h3>
+        <p>A personal photo essay captured during my time as media lead, using natural light and storytelling.</p>
+      </div>
+      <div class="project-card">
+        <h3>🖥️ Web Portfolio v1</h3>
+        <p>This website! Built with pure HTML and CSS as a foundation of my front-end learning journey.</p>
+      </div>
+    </div>
+  </section>
 
-        <hr />
+  <section id="message">
+    <h2>Message Us</h2>
+    <div class="message-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required>
+      <label for="question">Your Question:</label>
+      <textarea id="question" required></textarea>
+      <button onclick="submitMessage()">Submit</button>
+    </div>
+    <div class="messages" id="messages">
+      <h3>Audience Questions</h3>
+    </div>
+  </section>
 
-        <!-- Our Profile Section -->
-        <section id="our-profile">
-            <h1>Our Profile</h1>
-            <p>We are a team of passionate developers.</p>
-        </section>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:aulya.farras@example.com">aulya.farras@example.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/aulyafarras" target="_blank">linkedin.com/in/aulyafarras</a></p>
+  </section>
+  <section id="socials">
+    <h2>Follow Me</h2>
+    <p>Instagram: <a href="https://www.instagram.com/aulyafarras" target="_blank">@aulyafarras</a></p>
+    <p>Twitter: <a href="https://twitter.com/aulyafarras" target="_blank">@aulyafarras</a></p>
 
-        <hr />
+</main>
 
-        <!-- Message Us Section -->
-        <section id="message-us">
-            <h1>Message Us</h1>
-            <p>If you have any questions, feel free to reach out!</p>
+<footer>
+  <p>&copy; 2025 Aulya Farras El Maqy. All rights reserved.</p>
+  <p><em>"Still learning. Still dreaming. Still creating."</em></p>
+</footer>
 
-            <form></form>
-        </section>
-    </main>
-
-    <!-- Footer Content -->
-    <footer>
-        <p>&copy; 2025 Aulya Farras. All rights reserved.</p>
-    </footer>
 </body>
-
 </html>

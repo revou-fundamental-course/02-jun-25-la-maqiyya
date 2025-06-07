@@ -1,44 +1,175 @@
-/* Header Component */
-.main-header {
-    display: flex;
-    justify-content: space-between;
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
-.main-logo {
-    height: 50px;
-    width: 50px;
-    background-image: url(https://picsum.photos/200);
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
+/* Navbar */
+.navbar {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e2f;
+  padding: 1.5rem 2rem;
 }
 
-/* Navbar Component */
-nav {
-    display: flex;
-    align-items: center;
+.navbar img {
+  width: 50px;
+  margin-right: 10px;
 }
 
-nav>a {
-    border: 1px solid;
-    padding: 8px;
-    color: black;
-    text-decoration: none;
-    border-radius: 4px;
+.navbar h1 {
+  margin: 0;
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+/* Home Banner */
+.banner {
+  position: relative;
+  text-align: center;
+  background: url('banner-image.jpg') no-repeat center center/cover;
+  padding: 50px;
+  color: white;
+}
+
+.banner h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/*testing*/
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+
+
+#toggle-theme {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+/* Typewriter Animation */
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+/* Sections */
 section {
-    height: 500px;
+  padding: 2rem;
+  margin-bottom: 4rem;
 }
 
-.banner-img {
-    height: 350px;
-    background-image: url(https://picsum.photos/750);
-    background-size: cover;
-    background-position: center;
+.project-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-/* Footer Component */
+/* Message Form */
+.message-form {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.message-form input,
+.message-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.message-form button {
+  background-color: #1e1e2f;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Audience Questions */
+.messages {
+  max-width: 600px;
+  margin: auto;
+}
+
+.message-item {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  border-left: 5px solid #1e1e2f;
+}
+
+/* Footer */
 footer {
-    text-align: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  font-size: 0.9rem;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark-mode a {
+  color: #bb86fc;
+}
+
+.dark-mode .navbar,
+.dark-mode footer {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .message-form {
+  background: #222;
+  border: 1px solid #444;
+}
+
+.dark-mode .message-item {
+  background: #1e1e2f;
+  color: #fff;
+}
+
+mark {
+  background-color: #fff3b0;
 }
