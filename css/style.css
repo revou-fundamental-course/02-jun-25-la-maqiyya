@@ -20,6 +20,16 @@ body {
 }
 
 /* Kiri: Logo dan Judul */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* kiri dan kanan */
+  align-items: center;
+  background-color: #1e1e2f;
+  color: white;
+  padding: 1rem 1.5rem;
+  flex-wrap: wrap;
+}
+
 .navbar-left {
   display: flex;
   align-items: center;
@@ -48,7 +58,15 @@ body {
   font-weight: 700;
 }
 
-/* Kanan: Link Navigasi */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
 .navbar-links {
   display: flex;
   align-items: center;
@@ -65,20 +83,27 @@ body {
   cursor: pointer;
 }
 
-/* Tombol Menu (mobile) */
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .menu-toggle {
+    align-self: flex-end;
   }
 
   .navbar-links {
@@ -93,6 +118,7 @@ body {
     display: flex;
   }
 }
+
 
 
 /* Home Banner */
