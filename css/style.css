@@ -179,59 +179,72 @@ mark {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     gap: 0.5rem;
   }
 
   .navbar a {
     display: block;
-    margin: 5px 0;
+    margin: 8px 0;
     font-size: 0.95rem;
   }
 
   .banner {
-    padding: 30px 15px;
+    padding: 30px 20px;
   }
 
   .banner h2 {
     font-size: 1.6rem;
+    margin-bottom: 10px;
   }
 
   .banner p {
     font-size: 0.95rem;
+    margin: 0 auto;
+    max-width: 90%;
   }
 
   .container {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 0 auto;
   }
 
   section {
     padding: 1.5rem 1rem;
+    margin-bottom: 3rem;
   }
 
   .project-card {
     font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
 
   .message-form {
     padding: 1rem;
+    margin: 0 1rem;
   }
 
   .message-form input,
   .message-form textarea {
     font-size: 1rem;
     padding: 8px;
+    margin: 8px 0;
+  }
+
+  .messages {
+    margin: 1rem;
   }
 
   footer {
     font-size: 0.8rem;
     padding: 1rem;
+    margin-top: 2rem;
   }
 
   img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
   }
 }
-
- 
