@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aulya Farras El Maqy | Portfolio</title>
-  <link rel="stylesheet" href="css\style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-  <script src="js\script.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -20,13 +20,13 @@
         <h1>Aulya Farras El Maqy</h1>
       </div>
     </div>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
     <div class="navbar-links" id="navbar-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#message">Message Us</a>
-      <button id="toggle-theme" title="Toggle dark mode">🌓</button>
+      <button id="toggle-theme" title="Toggle dark mode" aria-label="Toggle dark mode">🌓</button>
     </div>
   </nav>
 </header>
@@ -34,11 +34,10 @@
 <main class="container">
   <section id="home">
     <div class="banner">
-        <img src="assets\Teori.jpg" alt="Portfolio Banner">
-        <h2>Welcome, <span id="user-name">Guest</span>!</h2>
-        <p>Your journey into creativity and development starts here.</p>
-</div>
-
+      <img src="assets/Teori.jpg" alt="Portfolio banner image of creativity and learning">
+      <h2>Welcome, <span id="user-name">Guest</span>!</h2>
+      <p>Your journey into creativity and development starts here.</p>
+    </div>
   </section>
 
   <section id="about">
@@ -53,7 +52,8 @@
       Now, I’m focusing seriously on learning front-end development, HTML, CSS, and JavaScript. 
       I created this website as a space to practise and document my learning journey, which I hope will continue to grow in the future. 
       Thanks for stopping by and getting to know me better!</p>
-    <dd>*in English</dd><br>
+    <small>*in English</small><br><br>
+
     <p>Halo! Aku Farras. <br>
       Awal mula ketertarikanku di dunia digital sebenarnya dari media sosial dan konten kreatif. 
       Selama dua tahun, aku jadi <mark>admin sosmed</mark> di pondok pesantren, sekaligus <mark>ketua tim media</mark> yang aku bentuk dari nol. 
@@ -64,7 +64,7 @@
       Sekarang, aku lagi serius belajar front-end development HTML, CSS, dan JavaScript. 
       Website ini aku buat sebagai tempat latihan dan dokumentasi perjalanan belajarku, yang aku harap terus berkembang ke depannya. 
       Terima kasih sudah mampir dan mengenalku lebih dekat!</p>
-    <dd>*in Indonesia</dd>
+    <small>*in Indonesia</small>
   </section>
 
   <section id="projects">
@@ -104,11 +104,12 @@
     <p>Email: <a href="mailto:aulya.farras@example.com">aulya.farras@example.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/aulyafarras" target="_blank">linkedin.com/in/aulyafarras</a></p>
   </section>
+
   <section id="socials">
     <h2>Follow Me</h2>
     <p>Instagram: <a href="https://www.instagram.com/aulyafarras" target="_blank">@aulyafarras</a></p>
     <p>Twitter: <a href="https://twitter.com/aulyafarras" target="_blank">@aulyafarras</a></p>
-
+  </section>
 </main>
 
 <footer>
