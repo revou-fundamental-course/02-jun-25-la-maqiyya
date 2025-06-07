@@ -8,34 +8,92 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Navbar */
+/* Navbar Layout */
 .navbar {
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #1e1e2f;
-  padding: 1.5rem 2rem;
+  color: white;
+  padding: 1rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Kiri: Logo dan Judul */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .navbar img {
   width: 50px;
-  margin-right: 10px;
+  height: auto;
 }
 
-.navbar h1 {
+.navbar-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.navbar-title .subtitle {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.navbar-title h1 {
+  font-size: 1.3rem;
   margin: 0;
-  color: white;
-  font-size: 2.2rem;
   font-weight: 700;
 }
 
-.navbar a {
+/* Kanan: Link Navigasi */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-links a,
+.navbar-links button {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
+  background: none;
+  border: none;
   font-size: 1rem;
+  cursor: pointer;
 }
+
+/* Tombol Menu (mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    margin-top: 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+}
+
 
 /* Home Banner */
 .banner {
