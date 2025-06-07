@@ -68,6 +68,13 @@ mark {
   font-weight: 700;
 }
 
+.navbar-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
