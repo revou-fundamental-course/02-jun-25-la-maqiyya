@@ -1,49 +1,54 @@
-/* ===================== */
-/* === GLOBAL STYLES === */
-/* ===================== */
-body {
-  font-family: 'Poppins', sans-serif;
+/* =============================== */
+/*            RESET + BASE         */
+/* =============================== */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #fdfdfd;
-  color: #333;
-  transition: all 0.3s ease;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 2rem;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
 }
 
 mark {
   background-color: #fff3b0;
 }
 
-#about p {
-  text-align: justify;
-  line-height: 1.8;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-/* ===================== */
-/* === NAVIGATION BAR === */
-/* ===================== */
+
+/* =============================== */
+/*          NAVIGATION BAR        */
+/* =============================== */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 1.5rem;
   background-color: #1e1e2f;
   color: white;
-  padding: 1rem 1.5rem;
-  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .navbar-left {
@@ -53,11 +58,11 @@ mark {
 }
 
 .profile-pic {
-  width: 50px;       
-  height: 50px;      
-  object-fit: cover;  
-  border-radius: 50%; 
-  border: 4px solid white;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #312938;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -69,20 +74,15 @@ mark {
 
 .navbar-title .subtitle {
   font-size: 0.9rem;
-  color: #ccc;
+  color: #d2d2d2;
 }
 
 .navbar-title h1 {
   font-size: 1.3rem;
-  margin: 0;
   font-weight: 700;
-}
-
-.navbar-top {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  color: #CB883A;
+  margin: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
 .menu-toggle {
@@ -98,6 +98,8 @@ mark {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .navbar-links a,
@@ -110,65 +112,125 @@ mark {
   cursor: pointer;
 }
 
-@media (min-width: 769px) {
+
+/* =============================== */
+/*        RESPONSIVE DI HAPE       */
+/* =============================== */
+@media (max-width: 768px) {
   .navbar {
-    flex-wrap: nowrap;
+    padding: 0.5rem 1rem; /* sebelumnya 1rem 1.5rem, dikurangi dikit */
+  }
+
+  .profile-pic {
+    width: 40px; /* sebelumnya 50px */
+    height: 40px;
+  }
+
+  .navbar-title h1 {
+    font-size: 1.1rem; /* sebelumnya 1.3rem */
+  }
+
+  .navbar-title .subtitle {
+    font-size: 0.8rem; /* sebelumnya 0.9rem */
+  }
+  
+  .menu-toggle {
+    display: block;              /* default-nya kan none */
+    margin-left: auto;           /* dorong paling kanan */
+    font-size: 2rem;             /* boleh sesuaikan */
+  }
+
+  .navbar-top {
+    display: flex;               /* baru aktif di HP */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .navbar-links {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    width: auto;
-    margin-top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links a,
+  .navbar-links button {
+    margin: 8px 0;
+    font-size: 0.95rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0.5rem;
+  }
+
+}
+
+
+/* =============================== */
+/*              BANNER            */
+/* =============================== */
+#home {
+  margin-top: 80px; /* biar gak ketiban navbar */
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../assets/ChatGPT\ Image\ 11\ Jun\ 2025\,\ 23.45.41.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+@media (min-width: 768px){
+  .banner h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 3rem;
+  }
+  .banner p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem;
   }
 }
 
-/* ===================== */
-/* ======= BANNER ====== */
-/* ===================== */
-.banner {
-  text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 3rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  color: white;
-  background-color: #1e1e2f;
-  border-radius: 0 0 12px 12px;
-}
-
-.banner h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #fff;
-}
-
-.banner p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
-  color: #ccc;
-}
-
-.banner img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-top: 1.5rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-/* ===================== */
-/* ==== SECTIONS ==== */
-/* ===================== */
+/* =============================== */
+/*           SECTIONS             */
+/* =============================== */
 section {
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 4rem;
+}
+
+#about p {
+  text-align: justify;
+  line-height: 1.8;
 }
 
 .project-card {
@@ -181,7 +243,7 @@ section {
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 10px;
@@ -210,8 +272,8 @@ section {
 
 .photo-gallery img {
   flex: 0 0 auto;
-  height: 200px; /* Hanya atur tinggi */
-  width: auto;   /* Biarkan lebar menyesuaikan proporsi */
+  height: 200px;
+  width: auto;
   border-radius: 8px;
   scroll-snap-align: start;
   cursor: grab;
@@ -225,9 +287,13 @@ section {
   transform: scale(0.98);
 }
 
-/* ===================== */
-/* === MESSAGE FORM === */
-/* ===================== */
+.photo-gallery.scrolling {
+  scroll-behavior: smooth;
+}
+
+/* =============================== */
+/*           CONTACT FORM         */
+/* =============================== */
 .message-form {
   background: #ffffff;
   padding: 2rem;
@@ -273,16 +339,12 @@ section {
   font-weight: 600;
   border-radius: 8px;
   transition: background-color 0.3s ease;
-  margin-top: 1rem;
 }
 
 .message-form button:hover {
   background-color: #33334d;
 }
 
-/* ===================== */
-/* ==== AUDIENCE Q&A ==== */
-/* ===================== */
 .messages {
   max-width: 600px;
   margin: auto;
@@ -296,9 +358,10 @@ section {
   border-left: 5px solid #1e1e2f;
 }
 
-/* ===================== */
-/* ======= FOOTER ====== */
-/* ===================== */
+
+/* =============================== */
+/*              FOOTER            */
+/* =============================== */
 footer {
   text-align: center;
   padding: 1rem;
@@ -324,21 +387,41 @@ footer {
 }
 
 
-/* ===================== */
-/* ===== DARK MODE ===== */
-/* ===================== */
+/* =============================== */
+/*           DARK MODE            */
+/* =============================== */
 .dark-mode {
   background-color: #121212;
   color: #f0f0f0;
 }
 
-.dark-mode a {
-  color: #bb86fc;
+.dark-mode .banner {
+  background-image: url('../assets/ChatGPT\ Image\ 11\ Jun\ 2025\,\ 23.51.29.png');
+}
+
+.dark-mode .banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: rgba(114, 102, 249, 0.2);
 }
 
 .dark-mode .navbar,
 .dark-mode footer {
   background-color: #1f1f1f;
+}
+
+.dark-mode .navbar-title .subtitle {
+  color: #ddd;
+}
+
+.dark-mode .profile-pic {
+  border: 3px solid #ffffff;
+}
+
+.dark-mode a {
+  color: #bb86fc;
 }
 
 .dark-mode .message-form {
@@ -354,126 +437,3 @@ footer {
 .dark-mode .social-icons a img {
   filter: brightness(0) invert(1);
 }
-
-/* ===================== */
-/* === TYPEWRITER === */
-/* ===================== */
-.typewriter {
-  overflow: hidden;
-  border-right: .15em solid orange;
-  white-space: nowrap;
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-
-/* ===================== */
-/* ===== RESPONSIVE ===== */
-/* ===================== */
-@media (max-width: 768px) {
-  /* Navbar tetap horizontal, bukan kolom */
-  .navbar {
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem 1.5rem;
-  }
-
-  /* Logo + nama isi ruang kiri */
-  .navbar-left {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  /* Burger menu aktif */
-  .menu-toggle {
-    display: block;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-
-  /* Menu navigasi (hidden saat awal) */
-  .navbar-links {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    display: none;
-    margin-top: 1rem;
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-
-  .navbar-links a,
-  .navbar-links button {
-    display: block;
-    margin: 8px 0;
-    font-size: 0.95rem;
-  }
-
-  /* Responsif section lainnya */
-  .banner h2 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-  }
-
-  .banner p {
-    font-size: 0.95rem;
-  }
-
-  .container {
-    padding: 1rem 1.5rem;
-  }
-
-  section {
-    padding: 1.5rem 1rem;
-    margin-bottom: 3rem;
-  }
-
-  .project-card {
-    font-size: 0.95rem;
-  }
-
-  .message-form {
-    padding: 1rem;
-    margin: 0 1rem;
-  }
-
-  .message-form input,
-  .message-form textarea {
-    font-size: 1rem;
-    padding: 8px;
-    margin: 8px 0;
-  }
-
-  .messages {
-    margin: 1rem;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-}
-
